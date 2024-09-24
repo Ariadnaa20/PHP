@@ -1,0 +1,92 @@
++ $1 + $2
+-
+*
+/
+% 
+** exponent
+
+x = y 
+x = x + Y
+x = x - y
+x = x * y
+x = x / y
+
+==
+===
+$x > $y i todo esto =>  <= > < != <> 
+$x++ --$x
+
+and or xor && || !
+
+$txt1 = "Hola";
+$txt2 = " mundo!";
+
+$txt1 .= $txt2;  // Esto es igual a: $txt1 = $txt1 . $txt2;
+
+echo $txt1;  // Imprimirá: "Hola mundo!
+
+
+IF ELSE 
+if (condition) {
+}
+
+if (5 > 3){
+    echo "5 es mayor que 3";
+}
+
+$t = 14;
+
+if ($t < 20) {
+  echo "Have a good day!";
+}
+
+SWITCH 
+
+$favcolor = "red";
+
+switch ($favcolor) {
+  case "red":
+    echo "Your favorite color is red!";
+    break;
+  case "blue":
+    echo "Your favorite color is blue!";
+    break;
+  case "green":
+    echo "Your favorite color is green!";
+    break;
+  default:
+    echo "Your favorite color is neither red, blue, nor green!";
+}
+
+
+LOOPS 
+WHILE
+while (condición) {  //LA CONDICON HA DE SER TRUE
+    // Código a ejecutar 
+}
+
+$count = 0;
+
+while ($count < 5) {
+    echo "El número es: $count<br>";
+    $count++;  // Incrementa el valor de $count
+}
+
+DO WHILE //SI O SI LO EJECUTO UNA VEZ AUNQUE LA CONDCION NO SEA VERDADERA 
+$count = 0;
+
+do { 
+    // Código a ejecutar
+} while (condición);
+
+FOR   se utiliza para ejecutar un bloque de código un número específico de veces.
+for ($i = 0; $i < 5; $i++) {
+    echo "El número es: $i<br>";
+}
+
+FOREACH 
+$frutas = ["Manzana", "Banana", "Naranja"];
+
+foreach ($frutas as $fruta) {
+    echo "Fruta: $fruta<br>";
+}

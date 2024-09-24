@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+</head>
+
+<body>
+<?php
+       echo "Hello World! <br>"; // per imprimir es en aquesta estructura
+
+?>
+</body>
+
+
+</html>
+
+
+--el llenguatge es case sensitve no es el mateix $color que $Color
+
+COMENTARIS
+
+// comentari simple # lo mismo mes per scripts  /* */ multilinea 
+
+VARIABLES
+
+String
+Integer
+Float (floating point numbers - also called double)  $x= 10.3; var_dump($x)  float (10.3)
+Boolean $x = true;
+Array $cars = array("Volvo","BMW","Toyota"); $cars = array($car1, $car2, $car3); echo $cars[0];....
+Object
+NULL
+Resource
+
+-- sempre portara el $, no pot començar per numero normament comença per lletra i es case sentive 
+$x = 5;  $r = 6  //entero 
+$y = "John"  //string
+
+VARIABLES OUTPUT
+$txt = "ariadna";  
+2 Maneras =             echo "I love $txt!";                      echo "I love" . $txt . " so much !";
+
+imprimir = echo $x + $r;    guardar en variable i depsues imprimir  $suma = $x + $r;  echo $suma;
+
+
+
+
+COM SABER EL TIPUS D'UNA VARIABLE ?
+
+$hola = "hola";
+$x = 5;
+echo $x;  //5   o echo("hola," . $x)  la coma podria anar fora dels " al final imprimex el matx el punt es per concatenar 
+var_dump($x);   //int(5)
+echo "<br>"
+var_dump($hola);
+
+
+<?php
+var_dump(5);           int(5)
+var_dump("John");       string(4) "John"
+var_dump(3.14);         float(3.14)
+var_dump(true);        bool(true)
+var_dump([2, 3, 56]); array(3) {
+                        [0]=>
+                        int(2)
+                        [1]=>
+                        int(3)
+                        [2]=>
+                        int(56)
+                        }
+var_dump(NULL);         NULL
+?>
+
+multiples variables tienen la misma      $x = $y = $z = "Fruit";
+
+EXEMPLES TIPUS ECHO perfectament substituible per print
+
+echo "<h2>Hola juani </h2>"
+echo "Hola<br>"
+
+$txt1 = "Learn PHP";
+$txt2 = "W3Schools.com";
+
+echo "<h2>$txt1</h2>";
+echo "<p>Study PHP at $txt2</p>";
+
+
+EXEMPLES TIPUS PRINT
+la diferencia entre print i echo es que print retorna un valor sempre 1 i nomes accepta un argument i echo no retorna valors i accepta multiples parametres
+
+print("<h2>Hello, World!</h2><br>");  // Imprime: Hola Mundo! y devuelve 1
+
+if (print "Hola") {
+    // Este bloque se ejecuta porque print devuelve 1
+}
+
+$txt1 = "Learn PHP";
+$txt2 = "W3Schools.com";
+
+print '<h2>' . $txt1 . '</h2>'; // si fos el cas q la variable estigues dins de '' imprimiria $txt1
+
+print '<p>Study PHP at ' . $txt2 . '</p>';  
+
+print "<p>Study PHP at, $txt2 . perfect </p>"  //ERROR el punt no va dins de las comillas
+print "<p>Study PHP at, " . $txt2 . " perfect</p>"; // CORRECIÓ
+print "<p>Study PHP at $txt2, perfect</p>"; //CORRECIÓ 2 
+

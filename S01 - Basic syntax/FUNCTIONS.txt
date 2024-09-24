@@ -1,0 +1,169 @@
+Numbers
+
+Integer 
+float
+number strings "25"
+Infinity 
+Nan
+
+INTEGER 
+
+utilizo var_dump()
+
+$result = 4 * 2.5;  // Resultado: 10.0 (float)
+PHP_INT_MAX PHP_INT_MIN PHP_INT_SIZE   el tamaño maximo del sistena
+
+is_int() is_integer() is_long()
+
+
+$x = 5985; var_dump(is_int($x));  bool(true)
+$x = 59.85; var_dump(is_int($x)); bool(false)
+
+FLOAT 
+PHP_FLOAT_MAX PHP_FLOAT_MIN PHP_FLOAT_SIZE 
+
+var_dump(is_float($x));
+
+
+INFINITY 
+$x = 1.9e411;
+var_dump($x);
+
+NAN acos permite del -1 al 1
+$x = acos(8);  // 8 está fuera del rango permitido
+var_dump($x);  // Imprimirá: float(NAN)
+
+
+NUMERICAL STRINGS
+$x = "5985";
+var_dump(is_numeric($x)); bool(true)
+$x = "59.85" + 100;  //la cadena se convierte en numero 
+var_dump(is_numeric($x));   bool(true)
+
+
+STRING
+echo strlen("Hello world!");
+echo str_word_count("Hello world!");
+echo strpos("Hello world!", "world");
+
+MATH 
+
+echo(pi());
+echo(min(0, 150, 30, 20, -8, -200));
+echo(max(0, 150, 30, 20, -8, -200));
+echo(abs(-6.7));    (devuelve el positvo)
+
+COMO CREAR UNA FUNCION 
+
+function myMessage(){
+    echo "Hello world!";
+}
+
+myMessage();
+
+function setHeight($minheight = 50) {
+  echo "The height is : $minheight <br>";
+}
+
+setHeight(350);
+setHeight(); // will use the default value of 50
+setHeight(135);
+setHeight(80);
+
+
+
+function familyName($fname, $year){
+    echo "My name is $fname.";
+}
+
+familyName("Jani", "1975")
+
+PHP DEFAULT ARGUMENT VALUE
+
+FUNCIONES RETURN 
+
+function sum($x, $y) {
+  $z = $x + $y;
+  return $z;
+}
+
+echo "5 + 10 = " . sum(5, 10) . "<br>";
+echo "7 + 13 = " . sum(7, 13) . "<br>";
+echo "2 + 4 = " . sum(2, 4);
+
+
+
+ARRAYS 
+$myArr = array("Volvo", 15, ["apples", "bananas", 567], familyName("Jani", "1975"));
+print_r($myArr);
+
+la funcion famly name devolvera valor si es un return si es un hecho no 
+
+echo count($myArr);
+
+
+
+FUNCIONS MES DIFICILS AMB PARAMETRES
+
+function add_five(&$value) {  // &$value es pot anar cambiant con el add_five 
+    $value += 5;
+}
+
+$num = 2;
+add_five($num);
+echo $num;
+
+
+function sumMyNumbers(...$x) { // no se sap quants parametres te i els gaurda a la array $x
+    $n = 0;
+    $len = count($x); //conta quants parametes te
+    for ($i = 0; $i < $len; $i++) { //va recorrent i suma a n que agafa ña posicio de la array x pues el num($i) 
+        $n += $x[$i];
+    }
+    return $n;
+}
+
+$a = sumMyNumbers(5, 2, 6, 2, 7, 7); // serveix per posar infints arguemnts 
+echo $a; //29
+
+
+function myFamily($lastname, ...$firstname) { //lastname seria doe 
+    $txt = "";
+    $len = count($firstname); //guarda todos los nombres
+    for ($i = 0; $i < $len; $i++) { 
+        $txt = $txt."Hi, $firstname[$i] $lastname.<br>";
+    }
+    return $txt;
+}
+
+es pot imprimir aixi 
+$a = myFamily("Doe", "Jane", "John", "Joey");
+echo $a;
+
+o aixi 
+echo myFamily("Doe", "Jane", "John", "Joey"); // Esto también imprimirá los saludos
+
+ESTO DARIA ERROR
+En PHP, no puedes tener un argumento variadic seguido de otro argumento norma
+myFamily(...$firstname, $lastname)
+
+
+AQUI CONVERTIRIA EL VALOR 
+function addNumbers(int $a, int $b) {
+  return $a + $b;
+}
+echo addNumbers(5, "5 days");
+// since strict is NOT enabled "5 days" is changed to int(5), and it will return 10
+
+
+OPERADOR strict 
+<?php declare(strict_types=1); // strict requirement
+si estp lo ponemos en la funcion de antes pues petarà 
+
+pero podem forçar
+
+<?php declare(strict_types=1); // strict requirement
+function addNumbers(float $a, float $b) : int {  //encara que siguin float tornara int
+  return (int)($a + $b);
+}
+echo addNumbers(1.2, 5.2);

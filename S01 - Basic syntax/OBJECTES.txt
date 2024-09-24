@@ -1,0 +1,81 @@
+--OBJECTES ES A DIR CLASES EN PHP 
+
+class Car {
+
+    //atributos 
+    public $color;
+    public $model;
+
+    //constructor
+    public function __construct($color, $model) {
+        $this->color = $color;
+        $this->model = $model;
+    }
+
+    public function message() {
+        return "This is a " $this->color . "and its color is" . $this->model . "!";
+        return "This is a $this->color and its model is $this->model!";
+
+    }
+}
+
+$myCar = new Car("red", "Volvo")
+var_dump($myCar)
+
+COMO SE GESTIONAN LOS NULLS
+
+$x = "Hola";
+$x = null;
+var_dump($x)  //resultado NULL
+
+
+COMO SE GFESTIONAN LOS CASTS 
+$x = 5;
+$x = (string) $x; //convertseixo el valor de x a string
+var_dump($x); string(1) "5"
+
+LAS CONSTANTES define() o const()  es lo mismo la diferencia esta en que const NOMES pot estar definda dins d'una clase NO dentro de funciones i define() en cualquier parte
+
+DEFINE 
+
+define("NOMBRE_CONSTANTE", valor);
+
+define("PI", 3.14159);  echo PI;
+define("NOMBRE_APP", "Mi Aplicación");
+function myTest() {
+    echo NOMBRE_APP;
+}
+
+myTest();
+
+define("cars", [  //constante llamada cas q tinene los valores
+  "Alfa Romeo",
+  "BMW",
+  "Toyota"
+]);
+echo cars[0];
+
+CONST  si quiero hacer la array ha de estar dentro de una clase 
+
+const MYCAR = "Volvo";
+echo MYCAR;
+
+class MiClase {
+    const CARS = [
+        "Alfa Romeo",
+        "BMW",
+        "Toyota"
+    ];
+}
+
+// Acceso a la constante
+echo MiClase::CARS[0];  // Esto imprimirá "Alfa Romeo"
+
+
+
+
+// Esto es válido con define()
+define("NOMBRE", "Mi aplicación " . date("Y"));
+
+// Esto no es válido con const
+// const NOMBRE = "Mi aplicación " . date("Y"); // Error YA Q HAY FUNCIOnN
