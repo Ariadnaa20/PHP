@@ -167,3 +167,4 @@ function addNumbers(float $a, float $b) : int {  //encara que siguin float torna
   return (int)($a + $b);
 }
 echo addNumbers(1.2, 5.2);
+
