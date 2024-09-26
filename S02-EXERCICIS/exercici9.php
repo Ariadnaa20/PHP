@@ -1,24 +1,18 @@
 <?php
-function removeValueFromArray($array, $value) {
-    $newArray = []; // Creamos un nuevo array vacío
-
-    // Recorremos cada elemento del array original
-    foreach ($array as $item) {
-        // Usamos un if para verificar si el elemento no es igual al valor a eliminar
-        if ($item !== $value) {
-            $newArray[] = $item; // Agregamos el elemento al nuevo array
+function esborrarValor($llista, $valor) {
+    $novaLlista = [];    
+    foreach ($llista as $element) {
+       
+        if ($element !== $valor) {
+            $novaLlista[] = $element; 
         }
     }
 
-    return $newArray; // Devolvemos el nuevo array sin el valor eliminado
-}
+    return $novaLlista; 
+} $llistaOriginal = [1, 2, 3, 4, 5, 3, 6];
+$valorEliminar = 3;
 
-// Ejemplo de uso
-$originalArray = [1, 2, 3, 4, 5, 3, 6];
-$valueToRemove = 3;
+$novaLlista = esborrarValor($llistaOriginal, $valorEliminar);
 
-$newArray = removeValueFromArray($originalArray, $valueToRemove);
-
-// Imprime el nuevo array
-print_r($newArray);
+print_r($novaLlista);
 ?>

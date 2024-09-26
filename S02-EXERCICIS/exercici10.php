@@ -1,30 +1,27 @@
 <?php
-function digitCountAndSum($value) {
-    // Comprobar si el valor es un número
-    if (!is_numeric($value)) {
-        return "El valor no es un número.";
+function comptarDigitsISuma($valor) {
+    
+    if (!is_numeric($valor)) {
+        return "El valor no número.";
     }
-
-    // Convertir el número a una cadena para poder iterar sobre sus dígitos
-    $valueString = strval(abs($value)); // Usamos abs() para manejar números negativos
-    $digitCount = strlen($valueString); // Contar el número de dígitos
-    $sum = array_sum(str_split($valueString)); // Sumar los dígitos usando str_split y array_sum
+    $valorString = strval(abs($valor)); 
+    $numDigits = strlen($valorString); 
+    $suma = array_sum(str_split($valorString)); 
 
     return [
-        'count' => $digitCount,
-        'sum' => $sum,
+        'comptador' => $numDigits,
+        'suma' => $suma,
     ];
 }
 
-// Ejemplo de uso
-$result = digitCountAndSum(12345);
-echo "Número de dígitos: " . $result['count'] . "<br>";
-echo "Suma de los dígitos: " . $result['sum'] . "<br>";
+$resultat = comptarDigitsISuma(12345);
+echo "Nombre de dígits: " . $resultat['comptador'] . "<br>";
+echo "Suma dels dígits: " . $resultat['suma'] . "<br>";
 
-$result = digitCountAndSum(-6789);
-echo "Número de dígitos: " . $result['count'] . "<br>";
-echo "Suma de los dígitos: " . $result['sum'] . "<br>";
+$resultat = comptarDigitsISuma(-6789);
+echo "Nombre de dígits: " . $resultat['comptador'] . "<br>";
+echo "Suma dels dígits: " . $resultat['suma'] . "<br>";
 
-$result = digitCountAndSum("abc");
-echo $result; // Esto debería mostrar que no es un número
+$resultat = comptarDigitsISuma("abc");
+echo $resultat; 
 ?>

@@ -1,30 +1,28 @@
 <?php
-function findLongestString($array) {
-    // Comprobar si el array está vacío
-    if (empty($array)) {
-        return "El array está vacío.";
+function trobarCadenaMesLlarga($llista) {
+    if (empty($llista)) {
+        return "La llista està buida.";
     }
 
-    // Inicializar variables para almacenar el valor más largo
-    $longestString = '';
+    $mesLlarga = '';
 
-    // Recorrer el array
-    foreach ($array as $string) {
-        // Comprobar si el elemento actual es una cadena y si es más largo que el anterior
-        if (is_string($string) && strlen($string) > strlen($longestString)) {
-            $longestString = $string; // Actualizar el valor más largo
+    
+    foreach ($llista as $cadena) {
+       
+        if (is_string($cadena) && strlen($cadena) > strlen($mesLlarga)) {
+            $mesLlarga = $cadena; 
         }
     }
 
-    return $longestString ?: "No hay cadenas en el array."; // Retornar el resultado o un mensaje si no hay cadenas
+    return $mesLlarga ?: "No hi ha cadenes en la llista."; 
 }
 
-// Ejemplo de uso
-$array = ["apple", "banana", "kiwi", "watermelon", "grape"];
-$longest = findLongestString($array);
-echo "El valor más largo es: " . $longest . "<br>";
 
-$array2 = [];
-$longest2 = findLongestString($array2);
-echo $longest2 . "<br>"; // Manejo de array vacío
+$llista = ["poma", "plàtan", "kiwi", "síndria", "raïm"];
+$mesLlarga = trobarCadenaMesLlarga($llista);
+echo "La cadena més llarga és: " . $mesLlarga . "<br>";
+
+$llistaBuida = [];
+$mesLlarga2 = trobarCadenaMesLlarga($llistaBuida);
+echo $mesLlarga2 . "<br>"; 
 ?>

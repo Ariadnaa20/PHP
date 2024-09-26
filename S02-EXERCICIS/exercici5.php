@@ -10,7 +10,7 @@ $lloc = [
     ["Chicago", "USA", "North America"],
     ["Buenos Aires", "Argentina", "South America"],
     ["Cairo", "Egypt", "Africa"],
-    ["London", "UK", "Europe"]
+    ["London", "UK", "Europa"]
 ];
 
 $comptadorUSA = 0;
