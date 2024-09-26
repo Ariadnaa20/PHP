@@ -8,15 +8,13 @@ function sumaProducteCapICua($numero) {
     $suma = 0;
     $producte = 1;
     
-    // Aquest bucle recorre cada xifra del número convertit a string
     for ($i = 0; $i < strlen($numeroString); $i++) {
-        // Convertim la xifra individual (caràcter) de nou a número enter
+       
         $xifra = intval($numeroString[$i]);
 
-        // Afegim la xifra a la variable suma
-        $suma += $xifra;
+        
+        $suma += $xifra; // Afegim la xifra a la variable suma
 
-        // Multipliquem la xifra per la variable producte
         $producte *= $xifra;
     }
     
@@ -24,13 +22,13 @@ function sumaProducteCapICua($numero) {
     echo "La suma de les xifres de $numero és: $suma<br>";
     echo "El producte de les xifres de $numero és: $producte<br>";
 
-    // Revertim el número
-    $reves = strrev($numeroString); 
+   
+    $reves = strrev($numeroString);  //aquesta funcio el que fa es reverteixim els caracters
     if ($numeroString === $reves) {
-        // Si el número original és igual al número al revés, és cap-i-cua
-        echo "$numero és cap-i-cua.<br>";
+        
+        echo "$numero és cap-i-cua.<br>"; // Si el número original és igual al número al revés, és cap-i-cua
     } else {
-        // Si no és igual, llavors no és capi-cua
+    
         echo "$numero no és cap-i-cua.<br>";
     }
 }
