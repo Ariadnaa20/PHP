@@ -20,7 +20,7 @@ function fibonacci($n) {
         $comptador++; //
     } while ($comptador < $n); //para cual el fibonacci n
 
-    echo "<br>"; 
+    echo "<br>"; --salt linea
 }
 
 
